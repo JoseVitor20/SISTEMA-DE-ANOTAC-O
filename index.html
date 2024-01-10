@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-AU-Compatible" content=""IE-Edge>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/388ade4391.js" crossorigin="anonymous"></script>
+    <title>SITE DE ANOTAÇÕES</title>
+</head>
+<body>
+    
+    <h2>SITEMA DE ANOTAÇÕES</h2>
+
+    <div class="container-anotacoes">
+
+
+    </div><!--container-anotacoes-->
+
+    <div class="btn-add"><b>+</b></div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            $('.btn-add').click(function(){
+                var el = '<div class="anotacao-single"><textarea placeholder="Sua nova anotação"></textarea></div>';
+                $('.container-anotacoes').append(el)
+                var textArea = $('.anotacao-single').last().find('textarea')
+                var date = new Date()
+                var hh = date.getHours()
+                var mm = date.getMinutes()
+                var findTime = `As ${hh}: ${mm}, foi adicionada uma nova anotação.`
+                textArea.html(findTime)
+            })
+        })
+
+    </script>
+
+</body>
+</html>
